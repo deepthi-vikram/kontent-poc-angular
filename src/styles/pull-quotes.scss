@@ -1,0 +1,110 @@
+.pull {
+    clear: both;
+    position: relative;
+    width: 100% !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+
+    .blockquote {
+        padding-left: 2 * $spacer;
+        font-size: 1em;
+        font-style: italic;
+    }
+
+    .blockquote::before {
+        display: block;
+        content: url('/quote.svg');
+        font-size: 4 * $spacer;
+        font-weight: bold;
+        font-style: italic;
+        position: absolute;
+        left: 0.75 - $spacer;
+        top: -0.75rem;
+    }
+
+    .blockquote-footer {
+        margin-top: 0;
+        padding-left: 2 * $spacer;
+        font-size: 0.825em;
+    }
+}
+
+@media (min-width: 768px) {
+    .pull {
+        &.w-100 {
+            width: 100% !important;
+        }
+
+        &.w-75 {
+            width: 75% !important;
+        }
+        &.w-50 {
+            width: 50% !important;
+        }
+        &.w-25 {
+            width: 25% !important;
+        }
+    }
+
+    .pull::before {
+        left: -0.25 * $spacer;
+        top: -1.75 * $spacer;
+    }
+
+    .pull-left,
+    .pull-deep-left {
+        float: left;
+        margin-right: $spacer;
+    }
+
+    .pull-right,
+    .pull-deep-right {
+        float: right;
+        margin-left: $spacer;
+    }
+
+    $deep-margin: 8.333%;
+
+    .pull-deep-left {
+        margin-left: -1 * $deep-margin;
+
+        &.w-100 {
+            width: 100% + $deep-margin !important;
+            margin-right: 0;
+        }
+
+        &.w-75 {
+            width: 75% + $deep-margin !important;
+        }
+        &.w-50 {
+            width: 50% + $deep-margin !important;
+        }
+        &.w-25 {
+            width: 25% + $deep-margin !important;
+        }
+    }
+
+    .pull-deep-right {
+        margin-right: -1 * $deep-margin;
+
+        &.w-100 {
+            width: 100% + $deep-margin !important;
+            margin-left: 0;
+        }
+
+        &.w-75 {
+            width: 75% + $deep-margin !important;
+        }
+        &.w-50 {
+            width: 50% + $deep-margin !important;
+        }
+        &.w-25 {
+            width: 25% + $deep-margin !important;
+        }
+    }
+
+    .pull-extra-wide {
+        margin-left: -1 * $deep-margin;
+        width: 100% + (2 * $deep-margin) !important;
+    }
+}

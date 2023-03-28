@@ -1,0 +1,236 @@
+$moad-primary: #373a3c;
+$moad-secondary: #b86800;
+
+$enable-shadows: true;
+
+$border-width: 2px;
+
+$primary: $moad-primary;
+$secondary: $moad-secondary;
+$component-active-bg: $moad-primary;
+$link-color: #0d6efd;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/_variables";
+
+/* make the customizations */
+
+$theme-colors: (
+  "primary": $moad-primary,
+  "secondary": $moad-secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "gray": $gray-500,
+  "highlight": $yellow-200,
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  --bs-body-font-family: "Montserrat", sans-serif;
+  --bs-font-sans-serif: "Montserrat", sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: normal;
+  font-weight: bold;
+}
+
+.logo {
+  color: $moad-primary;
+
+  .logo-text {
+    text-align: center;
+  }
+
+  .logo-name {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .logo-tagline {
+    font-size: 16px;
+  }
+}
+
+.navbar-light .navbar-nav .nav-item {
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $moad-primary;
+}
+
+.navbar-light .navbar-nav .nav-link.link {
+  border-bottom: 2px solid $moad-primary;
+}
+
+.card-img-top {
+  border-bottom: $card-border-width solid $card-border-color;
+}
+
+.card-img-left {
+  border-bottom-left-radius: calc(#{$border-radius} - #{$border-width}) !important;
+  border-top-left-radius: calc(#{$border-radius} - #{$border-width}) !important;
+  border-right: $card-border-width solid $card-border-color;
+}
+
+.card-img-right {
+  border-bottom-right-radius: calc(#{$border-radius} - #{$border-width}) !important;
+  border-top-right-radius: calc(#{$border-radius} - #{$border-width}) !important;
+  border-left: $card-border-width solid $card-border-color;
+}
+
+.rounded-0 {
+  .card-img,
+  .card-img-left,
+  .card-img-right,
+  .card-img-top,
+  .card-img-bottom {
+    border-radius: 0px !important;
+  }
+}
+
+.show-static-warning {
+  .not-dynamic {
+    position: relative;
+  }
+  .not-dynamic:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(
+      135deg,
+      #99031f30 25%,
+      #e3525230 25%,
+      #e3525230 50%,
+      #99031f30 50%,
+      #99031f30 75%,
+      #e3525230 75%,
+      #e3525230 100%
+    );
+    background-size: 56.57px 56.57px;
+    pointer-events: none;
+  }
+
+  .row.not-dynamic:after {
+    margin: 0 15px;
+    width: calc(100% - 30px);
+  }
+
+  .not-dynamic:hover:after {
+    display: none;
+  }
+}
+
+.article-attribution {
+  max-width: 120px;
+}
+
+@media (min-width: 768px) {
+  .article-body .row {
+    margin: 0 ($spacer * 10);
+  }
+
+  .article-attribution {
+    float: left;
+  }
+}
+
+.col-breakout {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    clear: both;
+  }
+}
+
+.full-height-columns > * > * {
+  height: 100%;
+}
+
+.mblc-0 > :last-child {
+  margin-bottom: 0 !important;
+}
+
+#main > p, 
+#main > h1,
+#main > h2,
+#main > h3,
+#main > h4,
+#main > h5,
+#main > h6
+{
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1320px;
+  margin-top: 3rem!important;
+  text-align: center!important;
+}
+
+figcaption {
+  color: #61615f;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+.footer-links, .footer-links a {
+  text-align: right;
+  color: #fff;
+}
+
+.footer-links a:hover {
+  text-decoration: none;
+}
+
+.instagram {
+  width: 100%;
+  height:100%;
+}
+
+@import "./pull-quotes.scss";
+@import "./custom-element.scss";
+@import "./pulse.css";
+@import "./pulse2.css";
+@import "./pulse-hr.css";
